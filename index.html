@@ -4,7 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Puppy Bowl</title>
   </head>
-  <body></body>
+  <body>
+    <header class="page-header">
+      <h4>Welcome to Puppy Bowl!</h4>
+    </header>
+    <!-- form to add new players -->
+    <div id="new-player-form">
+      <div class="title"><h3>New Player Form</h3></div>
+      <form action="#">
+        <div class="input_box">
+          <span class="details">Name</span>
+          <input type="text" placeholder="Buddy" required />
+        </div>
+        <div class="input_box">
+          <span class="details">ID</span>
+          <input type="text" placeholder="12345" required />
+        </div>
+        <div class="input_box">
+          <span class="details">Breed</span>
+          <input type="text" placeholder="German Shepard" required />
+        </div>
+        <div class="input_box">
+          <span class="details">Status</span>
+          <input type="text" placeholder="Field" required />
+        </div>
+        <div class="input_box">
+          <span class="details">Created At</span>
+          <input type="text" placeholder="00:00" required />
+        </div>
+        <div class="input_box">
+          <span class="details">Updated At</span>
+          <input type="text" placeholder="00:00" required />
+        </div>
+        <div class="input_box">
+          <span class="details">Team ID</span>
+          <input type="text" placeholder="1234" required />
+        </div>
+        <div class="input_box">
+          <span class="details">Cohort ID</span>
+          <input type="text" placeholder="1234" required />
+        </div>
+
+        <div class="button">
+          <input type="submit" value="ADD" />
+        </div>
+      </form>
+    </div>
+
+    <!-- container for all players -->
+    <div id="all-players-container">
+   
+    <!-- import JavaScript -->
+    <script src="./script.js"></script>
+  </body>
 </html>
+
