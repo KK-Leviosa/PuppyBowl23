@@ -1,3 +1,6 @@
+//renderAllPlayers
+// render all players
+=======
 const playerContainer = document.getElementById("all-players-container");
 const newPlayerFormContainer = document.getElementById("new-player-form");
 
@@ -79,29 +82,45 @@ const removePlayer = async (playerId) => {
  * @param playerList - an array of player objects
  * @returns the playerContainerHTML variable.
  */
-const renderAllPlayers = (playerList) => {
-  try {
-  } catch (err) {
-    console.error("Uh oh, trouble rendering players!", err);
-  }
-};
 
+const renderAllPlayers = (playerList) => {
+  if (!playerList || playerList.length === 0) {
+    playerContainer.innerHTML = "<h3>No recipes found</h3>";
+    return;
+  }
+
+  playerContainer.innerHTML = "";
+
+  playerList.forEach((player) => {
+    const playerElement = document.createElement("div");
+    playerElement.classList.add("players");
+    playerElement.innerHTML = `
+      <h4>${player.name}</h4>
+      <p> ${player.breed}</p>
+      <p> ${player.imageUrl}</p>
+      <p> ${player.teamId}</p>
+      <button class ="delete-button" data-id="${player.id}">Remove</button>
+      <button class ="detail-button" data-id="${player.id}">See Details/button>
+      `;
+  });
+
+  playerContainer.appendChild(playerElement);
+
+  let deleteButton = playerElement.querySelector(".delete-button");
+  deleteButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    removePlayer(player.id);
+  });
+
+  let detailButton = playerElement.querySelector(".detail-button");
+  detailButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    renderSinglePlayer(player.id);
+  });
+};
 /**
  * It renders a form to the DOM, and when the form is submitted, it adds a new player to the database,
  * fetches all players from the database, and renders them to the DOM.
  */
-const renderNewPlayerForm = () => {
-  try {
-  } catch (err) {
-    console.error("Uh oh, trouble rendering the new player form!", err);
-  }
-};
-
-const init = async () => {
-  const players = await fetchAllPlayers();
-  renderAllPlayers(players);
-
-  renderNewPlayerForm();
-};
 
 init();
