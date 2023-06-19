@@ -12,6 +12,9 @@ const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
  */
 const fetchAllPlayers = async () => {
   try {
+    const response = await fetch(`${APIURL}/${players}`);
+        const players = await response.json();
+        console.log(players);
   } catch (err) {
     console.error("Uh oh, trouble fetching players!", err);
   }
@@ -19,6 +22,9 @@ const fetchAllPlayers = async () => {
 
 const fetchSinglePlayer = async (playerId) => {
   try {
+    const response = await fetch (`${APIURL}/${playerId}`);
+        const singlePlayer = await response.json(); 
+        console.log(singlePlayer); 
   } catch (err) {
     console.error(`Oh no, trouble fetching player #${playerId}!`, err);
   }
@@ -26,6 +32,12 @@ const fetchSinglePlayer = async (playerId) => {
 
 const addNewPlayer = async (playerObj) => {
   try {
+    const response = await fetch (`${APIURL}`, {
+      method:"POST",
+      body: JSON.stringify(playerObj),
+  });
+  const newPlayer = await response.json();
+  console.log(newPlayer);
   } catch (err) {
     console.error("Oops, something went wrong with adding that player!", err);
   }
@@ -33,6 +45,12 @@ const addNewPlayer = async (playerObj) => {
 
 const removePlayer = async (playerId) => {
   try {
+    const response = await fetch(`${API_URL}`, {
+      method: "DELETE",
+  
+  });
+  const result = await response.json();
+  console.log(result);
   } catch (err) {
     console.error(
       `Whoops, trouble removing player #${playerId} from the roster!`,
