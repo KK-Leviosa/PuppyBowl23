@@ -1,0 +1,108 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-image: linear-gradient(45deg, #478657, hwb(240 84% 11%));
+}
+
+.page-header {
+  background-color: rgb(249, 251, 239);
+  margin-bottom: 20px;
+  padding: 2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  color: #718058;
+  margin-bottom: 60px;
+}
+
+#all-players-container {
+  margin-top: 70px;
+}
+
+h3 {
+  background-color: #ebecf0;
+  color: #535e42;
+}
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  background: white;
+  margin-bottom: 2em;
+  height: fit-content;
+}
+
+.card-content {
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.card-content h5 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.card-content p {
+  font-size: 80%;
+}
+
+/* Flexbox stuff */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 1 24%;
+}
+
+/* container and form */
+.title {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #424346;
+}
+
+#new-player-form {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  padding: 35px 30px;
+  height: fit-content;
+  margin-bottom: 20px;
+}
+
+.input_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+  color: rgb(112, 133, 151);
+}
+
+/* submit button */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #040404;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+}
